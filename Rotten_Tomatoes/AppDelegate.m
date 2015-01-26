@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "MoviesViewController.h"
+#import "TabController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    MoviesViewController* mvc = [[MoviesViewController alloc] init];
+    UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:mvc];
+    
+    self.window.rootViewController = nvc;
+
+    
+//    //create an array of all view controllers that will represent the tab at the bottom
+//    NSArray *myViewControllers = [[NSArray alloc] initWithObjects:
+//                                  nvc, nil];
+//    
+//    //initialize the tab bar controller
+//    TabController* tabController = [[TabController alloc] init];
+//    
+//    //set the view controllers for the tab bar controller
+//    [tabController setViewControllers:myViewControllers];
+//    
+//    //add the tab bar controllers view to the window
+//    [self.window addSubview:tabController.view];
+//
+////    self.window.rootViewController = nvc;
+
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
